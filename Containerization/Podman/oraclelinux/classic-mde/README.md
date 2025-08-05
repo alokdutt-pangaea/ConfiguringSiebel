@@ -1,4 +1,4 @@
-# Siebel On Docker for Oracle Linux 7
+# Siebel On Podman for Oracle Linux 8
 
 In this section, we'll cover one possible method for building and running Siebel as a set of Docker containers that will run against an Oracle Linux  operating system. The section is split into two parts:
 
