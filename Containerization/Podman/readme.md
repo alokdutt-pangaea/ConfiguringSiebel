@@ -1,4 +1,4 @@
-# Building Siebel for Docker
+# Building Siebel for Podman
 
 Oracle now makes available pre-built container images for Siebel. You can request these on MOS by submitting an SR. Even so, you may wish to build your own container.
 
