@@ -170,11 +170,20 @@ bash configure sample-architecture.sh
 
 To stop the containers for a specific setup, use the following syntax:
 ```
-bash stopAll <parameter file>
+bash stop_DEV.sh
+```
+## Start Containers
+
+To start the containers for a specific setup, use the following syntax:
+```
+bash start_DEV.sh
 ```
 
-e.g.
+## To remove containers
+
+First stop containers then 
 
 ```
-bash stopAll siebent.sh
+podman rm <container_name>
+
 ```

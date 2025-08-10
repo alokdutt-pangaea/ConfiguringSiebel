@@ -1,5 +1,4 @@
 #!/bin/bash
-#Note this script will only stop containers not remove them
 
 getContainerHealth() {
   podman healthcheck run "$1" >/dev/null 2>&1
@@ -61,18 +60,7 @@ else
 fi
 
 
-#Start sai-DEV if not already running
-if ! podman ps --format '{{.Names}}' | grep -q "sai-DEV"; then
-    echo "Starting sai-DEV"
-    set -x
-    podman start sai-DEV
-    set +x
-    waitContainer "sai-DEV"
-else
-    echo "Container sai-DEV is already running — skipping start"
-    date
 
-fi
 
 #Start cgw-DEV if not already running
 if ! podman ps --format '{{.Names}}' | grep -q "cgw-DEV"; then
@@ -96,6 +84,19 @@ if ! podman ps --format '{{.Names}}' | grep -q "ses-DEV"; then
     waitContainer "ses-DEV"
 else
     echo "Container ses-DEV is already running — skipping start"
+    date
+
+fi
+
+#Start sai-DEV if not already running
+if ! podman ps --format '{{.Names}}' | grep -q "sai-DEV"; then
+    echo "Starting sai-DEV"
+    set -x
+    podman start sai-DEV
+    set +x
+    waitContainer "sai-DEV"
+else
+    echo "Container sai-DEV is already running — skipping start"
     date
 
 fi
